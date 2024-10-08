@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping Inspection Audit Checklist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        .form-section {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Shipping Inspection Audit Checklist</h1>
+        <form>
+            <div class="form-section">
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="inspector" class="form-label">Inspector:</label>
+                        <input type="text" id="inspector" name="inspector" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="date" class="form-label">Date:</label>
+                        <input type="date" id="date" name="date" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="orderNumber" class="form-label">Order Number(s):</label>
+                        <input type="text" id="orderNumber" name="orderNumber" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="customer" class="form-label">Customer:</label>
+                        <input type="text" id="customer" name="customer" class="form-control">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>1. Order Verification</h3>
+                <div class="form-check">
+                    <input type="checkbox" id="orderMatches" name="orderMatches" class="form-check-input">
+                    <label for="orderMatches" class="form-check-label">Order matches picking ticket</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="correctCustomer" name="correctCustomer" class="form-check-input">
+                    <label for="correctCustomer" class="form-check-label">Correct customer details on ticket</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="requiredParts" name="requiredParts" class="form-check-input">
+                    <label for="requiredParts" class="form-check-label">Required parts listed and correct quantities are confirmed</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>2. Part Quality and Conformance</h3>
+                <div class="form-check">
+                    <input type="checkbox" id="freeFromDamage" name="freeFromDamage" class="form-check-input">
+                    <label for="freeFromDamage" class="form-check-label">Parts are free from visible damage or defects</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="partNumbersMatch" name="partNumbersMatch" class="form-check-input">
+                    <label for="partNumbersMatch" class="form-check-label">Part numbers match order specifications</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="qualityRequirements" name="qualityRequirements" class="form-check-input">
+                    <label for="qualityRequirements" class="form-check-label">Parts meet all quality and specification requirements</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="lotBatchNumbers" name="lotBatchNumbers" class="form-check-input">
+                    <label for="lotBatchNumbers" class="form-check-label">Lot/Batch numbers are documented (if required)</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>3. Quantity Check</h3>
+                <div class="form-check">
+                    <input type="checkbox" id="quantityMatches" name="quantityMatches" class="form-check-input">
+                    <label for="quantityMatches" class="form-check-label">Quantity picked matches order quantity</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="backupCheck" name="backupCheck" class="form-check-input">
+                    <label for="backupCheck" class="form-check-label">Backup check on quantity performed</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>4. Packing and Labeling</h3>
+                <div class="form-check">
+                    <input type="checkbox" id="securePacking" name="securePacking" class="form-check-input">
+                    <label for="securePacking" class="form-check-label">Parts securely packed to prevent transit damage</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="labelsClear" name="labelsClear" class="form-check-input">
+                    <label for="labelsClear" class="form-check-label">Labels are clear, accurate, and properly attached</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="hazardousLabeled" name="hazardousLabeled" class="form-check-input">
+                    <label for="hazardousLabeled" class="form-check-label">Hazardous materials are labeled according to regulations (if applicable)</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="shippingDocs" name="shippingDocs" class="form-check-input">
+                    <label for="shippingDocs" class="form-check-label">Correct shipping documentation included</label>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>5. Additional Notes and Observations</h3>
+                <textarea id="additionalNotes" name="additionalNotes" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-section">
+                <h3>6. Follow-up Actions Required</h3>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Issue Identified</th>
+                            <th>Responsible Party</th>
+                            <th>Due Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="issueIdentified[]" class="form-control"></td>
+                            <td><input type="text" name="responsibleParty[]" class="form-control"></td>
+                            <td><input type="date" name="dueDate[]" class="form-control"></td>
+                            <td><input type="text" name="status[]" class="form-control"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="form-section">
+                <h3>Sign-off</h3>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="inspectorName" class="form-label">Inspector Name:</label>
+                        <input type="text" id="inspectorName" name="inspectorName" class="form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inspectorSignature" class="form-label">Inspector Signature:</label>
+                        <input type="text" id="inspectorSignature" name="inspectorSignature" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label for="signoffDate" class="form-label">Date:</label>
+                        <input type="date" id="signoffDate" name="signoffDate" class="form-control" required>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
